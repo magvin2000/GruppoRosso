@@ -1,7 +1,7 @@
 <?php
 include("config.php");
     $tabella=$_GET['tabella'];
-    $sql = "SHOW COLUMNS FROM " . $tabella;
+    $sql = "SHOW COLUMNS FROM ". $db . "." . $tabella;
     $stmt = $db->prepare($sql);
     $stmt->execute();
     echo "<thead><tr>";

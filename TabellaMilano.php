@@ -16,7 +16,7 @@
   .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 </head>
-<body onload="selection('Giacenza Milano')">
+<body onload="selection('giacenze_milano')">
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="navigation"> 
         <div class="container-fluid">
