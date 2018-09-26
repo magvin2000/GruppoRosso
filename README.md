@@ -1,2 +1,0 @@
-# GruppoRosso
-codice gruppo rosso
