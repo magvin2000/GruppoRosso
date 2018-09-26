@@ -44,3 +44,7 @@
 <a href="TabellaMaggiorCosto.php"> Maggior Costo</a>
 </h2>
 <p id="prova" class="hidden"></p>
+</html>
+<?php
+
+?>
