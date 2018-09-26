@@ -1,51 +1,29 @@
-<?php
-session_start();
-if(isset($_SESSION['Verifica']))
-{
-if(isset($_SESSION['IdUtente']) && isset($_SESSION['Password']))
-{
-    if ($_SESSION['Ruolo'] == 'Ospite')
-        $ruolo = 'Ospite';
-    else
-        $ruolo = 'Amministratore';
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="Gruppo_Rosso/css/styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
-    <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script>
-    <script language="JavaScript" type="text/JavaScript" src="scripts/AJAX.js"></script> 
+    <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: 'Merriweather', serif;}
+  .w3-bar-block .w3-bar-item {padding:20px}
+</style>
 </head>
-<body onload="selection('Prodotti');">
+<body>
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="navigation"> 
         <div class="container-fluid">
-            <div class="navbar-header">
-                <ol class="breadcrumb">
+            <div class="navbar-header"><h3>Menu Principale / Giacenza Milano</h3></div>
+                <!--<ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="Menu.php"><h4>Menu Principale</h4></a></li>
     <li class="breadcrumb-item"><a href="TabellaMilano.php">Giacenza Milano</a></li>
-  </ol>
+  </ol>-->
 <!--
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello George <b class="caret"></b></a>
@@ -54,12 +32,10 @@ if(isset($_SESSION['IdUtente']) && isset($_SESSION['Password']))
               <li><a href="#">Logout</a></li>
             </ul>
           </li> -->
-            </div>
             <div class="container">
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
-                    <div class="search-control">
-                    <input type="search" id="research"  onkeyup='Ricerca("Prodotti");' name="q" placeholder="Cerca">
+                    <input type="text" class="form-control" placeholder="Search">
                     <button type='submit' style="margin: 5px" class='btn btn-primary' id="research"  onclick='RicercaFiltro("Prodotti");' ><span class='glyphicon glyphicon-search'></span></button>
                     <button type='submit' style="margin: 5px"  class='btn btn-primary'><span class='glyphicon glyphicon-arrow-left'></span></button> 
                 </div>
@@ -69,8 +45,6 @@ if(isset($_SESSION['IdUtente']) && isset($_SESSION['Password']))
         </div>
     </nav>
     <div class="container" style="align-right" id="mostra">                      
-    <?php if($ruolo == 'Amministratore') {?>
-    <?php } ?>
         <!-- form modale per Aggiungi-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -90,18 +64,7 @@ if(isset($_SESSION['IdUtente']) && isset($_SESSION['Password']))
                         <label for="QuantitaDisponibile">Quantità:</label>
                         <input type="text" class="form-control" name="QuantitaDisponibile" id="QuantitaDisponibile" placeholder="Quantita Disponibile" required>
                         <label for="IdMagazzino">Magazzino:</label>
-                        <select id="IdMagazzino">
-                        <?php 
-                            include("config.php");
-                            $sql = "SELECT DescrizioneMagazzino, IdMagazzino FROM magazzino";
-                            $stmt = $db->prepare($sql);
-                            $stmt-> execute();         
-                            while($row = $stmt->fetch(PDO::FETCH_ASSOC))
-                            {
-                                ?>
-                                <option value="<?php echo $row['IdMagazzino']?>"> <?php echo $row['DescrizioneMagazzino']?> </option> <?php
-                            }                      
-                    ?>  
+                        <select id="IdMagazzino"> 
                     </select>                     
                     </div>
                     <div class="modal-footer">
@@ -123,11 +86,3 @@ if(isset($_SESSION['IdUtente']) && isset($_SESSION['Password']))
     <p id="prova" class="hidden"></p>
 </body>
 </html>
-<?php }
-else
-{
-    echo "<script language='JavaScript'>\n"; 
-    echo "alert('Accesso negato: torna indietro');\n"; 
-    echo"window.location.href = 'Login.php';";
-    echo "</script>"; 
-}?>
