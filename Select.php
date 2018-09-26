@@ -1,38 +1,83 @@
 <?php
 include("config.php");
-    $tabella=$_GET['tabella'];
-    $sql = "SHOW COLUMNS FROM " . $tabella;
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    echo "<thead><tr>";
-    $i=0;
-    while($field = $stmt->fetch(PDO::FETCH_ASSOC))
-    {        
-        $campo=$field['Field'];
-        echo "<th onclick='sorting($i);'>". $campo . "</th>";
-        $i++;
-    }
-    echo "</tr></thead>";
-    $sql = "SELECT * FROM " .$tabella ;
-    $stmt1 = $db->prepare($sql);
-    $stmt1->execute();
-    
-    while($row = $stmt1->fetch(PDO::FETCH_ASSOC))
-    {
-        $sql = "SHOW COLUMNS FROM " . $tabella;
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        echo "<tr>";
-        $i=0;
-        while($field = $stmt->fetch(PDO::FETCH_ASSOC))
+/*if($tabella == 'giacenze milano') */
+{
+    $sql = "SELECT * FROM giacenze_milano";
+    $stmt = $db->prepare($sql);  
+    $stmt->execute();   
+    echo "
+        <thead>
+        <tr>
+        <th>Descrizione</th> 
+        <th onclick='sorting(1);'>Quantità</th>
+        </tr>
+        </thead>";
+
+        while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC))
         {
-            if($i==0)
+            foreach($rows as $row)
             {
-                $id=$row[$field['Field']];
+                $Descrizione = $row['descrizione'];
+                $Quantita = $row['quantita'];
+                echo "<tr>"; 
+                echo "<td>". $Descrizione ."</td>";
+                echo "<td onclick='sorting(1);'>" . $Quantita . "</td>";
+                echo "</tr>";
             }
-            $campo=$row[$field['Field']];
-            echo "<td onclick='sorting($i);'>" . $campo . "</td>";
-            $i++;
         }
-        echo "</tr>";
+}
+/*if($tabella == 'carichi rimini') 
+    {
+        $sql = "SELECT IdRuoli, DescrizioneRuolo FROM ruoli";
+        $stmt = $db->prepare($sql);  
+        $stmt->execute();   
+        echo "
+            <thead>
+            <tr>
+            <th>IdRuoli</th> 
+            <th onclick='sorting(1);'>Descrizione Ruolo</th>
+            </tr>
+            </thead>";
+
+            while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC))
+            {
+                foreach($rows as $row)
+                {
+                    $IdRuoli = $row['IdRuoli'];
+                    $DescrizioneRuolo = $row['DescrizioneRuolo'];
+                    echo "<tr>"; 
+                    echo "<td>" . $IdRuoli . "</td>";
+                    echo "<td onclick='sorting(1);'>" . $DescrizioneRuolo . "</td>";
+                    echo "</tr>";
+                }
+            }
+
+        
     }
+    if($tabella == '1') 
+    {
+        $sql = "SELECT IdRuoli, DescrizioneRuolo FROM ruoli";
+        $stmt = $db->prepare($sql);  
+        $stmt->execute();   
+        echo "
+            <thead>
+            <tr>
+            <th>IdRuoli</th> 
+            <th onclick='sorting(1);'>Descrizione Ruolo</th>
+            </tr>
+            </thead>";
+
+            while($rows = $stmt->fetchAll(PDO::FETCH_ASSOC))
+            {
+                foreach($rows as $row)
+                {
+                    $IdRuoli = $row['IdRuoli'];
+                    $DescrizioneRuolo = $row['DescrizioneRuolo'];
+                    echo "<tr>"; 
+                    echo "<td>" . $IdRuoli . "</td>";
+                    echo "<td onclick='sorting(1);'>" . $DescrizioneRuolo . "</td>";
+                    echo "</tr>";
+                }
+            }
+
+    }*/

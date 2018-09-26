@@ -37,7 +37,7 @@
                 <div class="form-group has-feedback">
             <div class="navbar-header">
                 <li class="dropdown navbar-brand">
-            <a class="dropdown-toggle" data-toggle="dropdown">Home > Giacenza Milano <b class="caret"></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown">Home > Maggior Costo <b class="caret"></b></a>
             <ol class="dropdown-menu">
               <!--<li><a href="TabellaMilano.php">Giacenza Milano</a></li>-->
               <li><a href="TabellaMilano.php">Carichi Rimini</a></li>

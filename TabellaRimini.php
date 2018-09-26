@@ -16,7 +16,7 @@
   .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 </head>
-<body>
+<body onload ="selection('carichi rimini') ">
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="navigation"> 
         <div class="container-fluid">
@@ -37,7 +37,7 @@
                 <div class="form-group has-feedback">
             <div class="navbar-header">
                 <li class="dropdown navbar-brand">
-            <a class="dropdown-toggle" data-toggle="dropdown">Home > Giacenza Milano <b class="caret"></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown">Home > Giacenza Rimini <b class="caret"></b></a>
             <ol class="dropdown-menu">
               <!--<li><a href="TabellaMilano.php">Giacenza Milano</a></li>-->
               <li><a href="TabellaMilano.php">Carichi Rimini</a></li>
