@@ -1,7 +1,7 @@
 <?php
 include("config.php");
     $tabella=$_GET['tabella'];
-    $sql = "SHOW COLUMNS FROM ". $db . "." . $tabella;
+    $sql = "SHOW COLUMNS FROM ". $dbname . "." . $tabella;
     $stmt = $db->prepare($sql);
     $stmt->execute();
     echo "<thead><tr>";
@@ -13,13 +13,13 @@ include("config.php");
         $i++;
     }
     echo "</tr></thead>";
-    $sql = "SELECT * FROM " .$tabella ;
+    $sql = "SELECT * FROM " . $dbname . "."  . $tabella ;
     $stmt1 = $db->prepare($sql);
     $stmt1->execute();
     
     while($row = $stmt1->fetch(PDO::FETCH_ASSOC))
     {
-        $sql = "SHOW COLUMNS FROM " . $tabella;
+        $sql = "SHOW COLUMNS FROM " . $dbname . "."  . $tabella;
         $stmt = $db->prepare($sql);
         $stmt->execute();
         echo "<tr>";
