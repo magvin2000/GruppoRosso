@@ -194,7 +194,7 @@ function annulla(){
 }
 
 function Redirect(){
-    window.location.href = 'Login.php';
+    window.location.href = 'Menu.php';
 }
 
 function formAggiorna(IdMagazzino,tabella)
