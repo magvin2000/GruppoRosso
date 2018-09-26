@@ -1,7 +1,5 @@
 <?php
 include("config.php");
-if(IsSet($_SESSION["id_utente"])&&IsSet($_SESSION["descrizione_ruolo"])){
-    if($_SESSION["descrizione_ruolo"]=="utente standard") header("location: index.php");
     $tabella=$_GET['tabella'];
     $sql = "SHOW COLUMNS FROM " . $tabella;
     $stmt = $db->prepare($sql);
@@ -36,10 +34,5 @@ if(IsSet($_SESSION["id_utente"])&&IsSet($_SESSION["descrizione_ruolo"])){
             echo "<td onclick='sorting($i);'>" . $campo . "</td>";
             $i++;
         }
-        echo "<p class='radio'>";
-        echo "<td><input type='radio' name='btn_radio' id='rad' value=".$id." ></td>";
-        echo "</p>";
         echo "</tr>";
     }
-}
-else header("location: index.php");
