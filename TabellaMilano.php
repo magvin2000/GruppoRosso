@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Gruppo_Rosso/css/styles.css">
@@ -14,11 +15,23 @@
   body,h1,h2,h3,h4,h5,h6 {font-family: 'Merriweather', serif;}
   .w3-bar-block .w3-bar-item {padding:20px}
 </style>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Gruppo_Rosso/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<script language="JavaScript" type="text/JavaScript" src="scripts/Sorter.js"></script>
+    <script language="JavaScript" type="text/JavaScript" src="scripts/Research.js"></script> -->
+    <script language="JavaScript" type="text/JavaScript" src="Gruppo_Rosso/scripts/AJAX.js"></script>
+>>>>>>> 717f5ffeed287f20933f5f0f4e0768fca8107e39
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="navigation"> 
         <div class="container-fluid">
+<<<<<<< HEAD
             <div class="navbar-header"><h3>Menu Principale / Giacenza Milano</h3></div>
                 <!--<ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="Menu.php"><h4>Menu Principale</h4></a></li>
@@ -36,8 +49,25 @@
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Search">
+=======
+            <div class="navbar-header">
+                <li class="dropdown navbar-brand">
+            <a class="dropdown-toggle" data-toggle="dropdown">Home > Giacenza Milano <b class="caret"></b></a>
+            <ol class="dropdown-menu">
+              <li><a href="TabellaMilano.php">Giacenza Milano</a></li>
+              <li><a href="TabellaRimini.php">Carichi Rimini</a></li>
+              <li><a href="MaggiorCosto.php">Maggior Costo</a></li>
+            </ol>
+          </li> 
+            </div>
+            <div class="container">
+            <ul class="nav navbar-form navbar-right">
+                <div class="form-group has-feedback">
+                    <div class="search-control">
+                    <input type="text" class="form-control" id="research"  onkeyup='Ricerca("Prodotti");' name="q" placeholder="Cerca...">
+>>>>>>> 717f5ffeed287f20933f5f0f4e0768fca8107e39
                     <button type='submit' style="margin: 5px" class='btn btn-primary' id="research"  onclick='RicercaFiltro("Prodotti");' ><span class='glyphicon glyphicon-search'></span></button>
-                    <button type='submit' style="margin: 5px"  class='btn btn-primary'><span class='glyphicon glyphicon-arrow-left'></span></button> 
+                    <button type='submit' style="margin: 5px"  class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
                 </div>
                 </div>
             </ul>
@@ -64,7 +94,11 @@
                         <label for="QuantitaDisponibile">Quantità:</label>
                         <input type="text" class="form-control" name="QuantitaDisponibile" id="QuantitaDisponibile" placeholder="Quantita Disponibile" required>
                         <label for="IdMagazzino">Magazzino:</label>
+<<<<<<< HEAD
                         <select id="IdMagazzino"> 
+=======
+                        <select id="IdMagazzino">
+>>>>>>> 717f5ffeed287f20933f5f0f4e0768fca8107e39
                     </select>                     
                     </div>
                     <div class="modal-footer">
