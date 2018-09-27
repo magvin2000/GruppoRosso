@@ -1,11 +1,22 @@
 <?php
-include("config.php");
-    $tabella=$_GET['tabella'];
+    include("config.php");
+    $tabella=$_GET['tabella']; 
+    $sql = "SELECT COUNT(*) FROM ". $tabella;
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $tot_records = $stmt->fetchColumn();
     $sql = "SHOW COLUMNS FROM ". $dbname . "." . $tabella;
     $stmt = $db->prepare($sql);
     $stmt->execute();
     echo "<thead><tr>";
     $i=0;
+    $perpage = 5;
+    $page = 1;
+	if(isset($_GET['page'])){$page = filter_var($_GET['page'],FILTER_SANITIZE_NUMBER_INT);}
+    $tot_pagine = ceil($tot_records/$perpage);
+    $pagina_corrente = $page;
+	$primo = ($pagina_corrente-1)*$perpage;
+
     while($field = $stmt->fetch(PDO::FETCH_ASSOC))
     {        
         $campo=$field['Field'];
@@ -13,20 +24,25 @@ include("config.php");
         $i++;
     }
     echo "</tr></thead>";
-    $sql = "SELECT * FROM " . $dbname . "."  . $tabella ;
+    $sql = "SELECT * FROM ". $dbname . "." . $tabella . " LIMIT " . $primo . ',' . $perpage . ' ';
     $stmt1 = $db->prepare($sql);
     $stmt1->execute();
-    
+    if(isset($_GET['page']))
+    {
+        $page = filter_var($_GET['page'],FILTER_SANITIZE_NUMBER_INT);
+    }
     while($row = $stmt1->fetch(PDO::FETCH_ASSOC))
     {
+        //$j++;
         $sql = "SHOW COLUMNS FROM " . $dbname . "."  . $tabella;
         $stmt = $db->prepare($sql);
         $stmt->execute();
         echo "<tr>";
-        $i=0;
+        $j=0;
         while($field = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            if($i==2 )
+            
+            if($j==0)
             {
                 $campo=$row[$field['Field']];
                 echo "<td onclick='sorting($i);'>€" . $campo . "</td>";
@@ -47,6 +63,48 @@ include("config.php");
             }
 
             $i++;
+            $campo=$row[$field['Field']];
+            echo "<td onclick='sorting($j);'>" . $campo . "</td>";
+            $j++;
         }
         echo "</tr>";
+        
     }
+        echo '<tr><td colspan="7"><nav><ul class="pagination">';
+        for($i=1; $i<=$tot_pagine; $i++)
+    {
+        echo '<li><a href="?Select.php?page='.$i.'">'.$i.'</a></li>';
+    }
+        echo "</ul></nav></td></tr>";
+        //echo '</table>';
+   /* $tot_pagine = ceil($j/$perpage);
+    $pagina_corrente = $page;
+    $primo = ($pagina_corrente-1)*$perpage;
+    $sql = 'SELECT * FROM utenti ORDER BY id DESC LIMIT '.$primo.','.$perpage.' ';*/
+
+    /*$out.='<tr><td colspan="7"><nav><ul class="pagination">';
+    for($i=1; $i<=$tot_pagine; $i++)
+    #1
+    if($tabella == 'giacenze_milano')
+    {
+        if((isset($_GET['Ricerca'])) && ($_GET['Ricerca'] == 1 && isset($_GET['Valore']) && $_GET['Valore'] != ''))
+        {
+            $valore = $_GET['Valore'];
+            $sql = "SELECT * FROM giacenze_milano WHERE Descrizione LIKE '%'.$valore.'%' OR Quantita LIKE '%'.$valore.'%' OR Prezzo LIKE '%'.$valore.'%' ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+        else
+        {
+        $out .='<li><a href="?page='.$i.'">'.$i.'</a></li>';
+            $sql = "SELECT * FROM giacenze_milano ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();
+        
+        }
+    $out .= "</ul></nav></td></tr>";
+    $out.='</table>';
+    return($out);*/
+    //}
+    #2
+?>

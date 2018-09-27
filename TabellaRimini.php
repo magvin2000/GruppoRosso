@@ -11,14 +11,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script language="JavaScript" type ="text/JavaScript" src ="Gruppo_Rosso/scripts/AJAX.js"></script>
-    <script language="JavaScript" type ="text/JavaScript" src="Gruppo_Rosso/scripts/RESEARCH.js"></script>
+    <script language="JavaScript" type ="text/JavaScript" src="Gruppo_Rosso/scripts/RESEARCH.JS"></script>
     <script language="JavaScript" type ="text/JavaScript" src="Gruppo_Rosso/scripts/Sorter.js"></script>
     <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: 'Merriweather', serif;}
   .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 </head>
-<body onload="selection('carichi_rimini')">
+<body onload ="selection('carichi_rimini') ">
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="navigation"> 
         <div class="container-fluid">

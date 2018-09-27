@@ -40,8 +40,8 @@
                 <div class="form-group has-feedback">
                     <div class="search-control">
                     <input type="text" class="form-control" id="research" onkeyup='Ricerca("giacenze_milano");' name="q" placeholder="Cerca...">
-                    <button type='submit' style="margin: 5px" id="research" class='btn btn-primary' onclick='RicercaFiltro("giacenze_milano");'><span class='glyphicon glyphicon-search'></span></button>
-                    <button type='submit' style="margin: 5px" class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
+                    <button type='submit' style="margin: 5px" id="research" class='btn btn-danger' onclick='RicercaFiltro("giacenze_milano");'><span class='glyphicon glyphicon-search'></span></button>
+                    <button type='submit' style="margin: 5px" class='btn btn-danger' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
                 </div>
                 </div>
             </ul>
