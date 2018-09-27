@@ -72,13 +72,17 @@
         if((isset($_GET['Ricerca'])) && ($_GET['Ricerca'] == 1 && isset($_GET['Valore']) && $_GET['Valore'] != ''))
         {
             $valore = $_GET['Valore'];
-            $sql = "SELECT * FROM giacenze_milano WHERE Descrizione like '%$valore%' OR Quantita like '%$valore%' OR Prezzo like '%$valore%' ";
+            $sql = "SELECT * FROM giacenze_milano WHERE Descrizione LIKE '%'.$valore.'%' OR Quantita LIKE '%'.$valore.'%' OR Prezzo LIKE '%'.$valore.'%' ";
             $stmt = $db->prepare($sql);  
             $stmt->execute();   
         }
         else
         {
         $out .='<li><a href="?page='.$i.'">'.$i.'</a></li>';
+            $sql = "SELECT * FROM giacenze_milano ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();
+        
         }
     $out .= "</ul></nav></td></tr>";
     $out.='</table>';
