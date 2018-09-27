@@ -11,12 +11,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script language="JavaScript" type ="text/JavaScript" src ="Gruppo_Rosso/scripts/AJAX.js"></script>
+    <script language="JavaScript" type ="text/JavaScript" src="Gruppo_Rosso/scripts/RESEARCH.js"></script>
+    <script language="JavaScript" type ="text/JavaScript" src="Gruppo_Rosso/scripts/Sorter.js"></script>
     <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: 'Merriweather', serif;}
   .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 </head>
-<body onload="selection('Maggior')">
+<body onload="selection('maggior_costo')">
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="navigation"> 
         <div class="container-fluid">
@@ -40,8 +42,8 @@
             <a class="dropdown-toggle" data-toggle="dropdown">Home > Maggior Costo <b class="caret"></b></a>
             <ol class="dropdown-menu">
               <!--<li><a href="TabellaMilano.php">Giacenza Milano</a></li>-->
-              <li><a href="TabellaMilano.php">Carichi Rimini</a></li>
-              <li><a href="TabellaRimini.php">Maggior Costo</a></li>
+              <li><a href="TabellaMilano.php">Giacenze Milano</a></li>
+              <li><a href="TabellaRimini.php">Carichi Rimini</a></li>
             </ol>
           </li> 
             </div>
@@ -49,8 +51,8 @@
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
                     <div class="search-control">
-                    <input type="text" class="form-control" id="research"  onkeyup='Ricerca("Prodotti");' name="q" placeholder="Cerca...">
-                    <button type='submit' style="margin: 5px" class='btn btn-primary' id="research"  onclick='RicercaFiltro("Prodotti");' ><span class='glyphicon glyphicon-search'></span></button>
+                    <input type="text" class="form-control" id="research"  onkeyup='Ricerca("maggior_costo");' name="q" placeholder="Cerca...">
+                    <button type='submit' style="margin: 5px" class='btn btn-primary' id="research"  onclick='RicercaFiltro("maggior_costo");' ><span class='glyphicon glyphicon-search'></span></button>
                     <button type='submit' style="margin: 5px"  class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
                 </div>
                 </div>

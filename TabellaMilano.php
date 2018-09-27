@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script language="JavaScript" type ="text/JavaScript" src ="Gruppo_Rosso/scripts/AJAX.js"></script>
+    <script language="JavaScript" type ="text/JavaScript" src="Gruppo_Rosso/scripts/RESEARCH.js"></script>
+    <script language="JavaScript" type ="text/JavaScript" src="Gruppo_Rosso/scripts/Sorter.js"></script>
     <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: 'Merriweather', serif;}
   .w3-bar-block .w3-bar-item {padding:20px}
@@ -20,18 +22,6 @@
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation" id="navigation"> 
         <div class="container-fluid">
-                <!--<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="Menu.php"><h4>Menu Principale</h4></a></li>
-    <li class="breadcrumb-item"><a href="TabellaMilano.php">Giacenza Milano</a></li>
-  </ol>-->
-<!--
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello George <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Settings</a></li>
-              <li><a href="#">Logout</a></li>
-            </ul>
-          </li> -->
             <div class="container">
             <ul class="nav navbar-form left">
                 <div class="form-group has-feedback">
@@ -49,9 +39,9 @@
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
                     <div class="search-control">
-                    <input type="text" class="form-control" id="research"  onkeyup='Ricerca("Prodotti");' name="q" placeholder="Cerca...">
-                    <button type='submit' style="margin: 5px" class='btn btn-primary' id="research"  onclick='RicercaFiltro("Prodotti");' ><span class='glyphicon glyphicon-search'></span></button>
-                    <button type='submit' style="margin: 5px"  class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
+                    <input type="text" class="form-control" id="research" onkeyup='Ricerca("giacenze_milano");' name="q" placeholder="Cerca...">
+                    <button type='submit' style="margin: 5px" id="research" class='btn btn-danger' onclick='RicercaFiltro("giacenze_milano");'><span class='glyphicon glyphicon-search'></span></button>
+                    <button type='submit' style="margin: 5px" class='btn btn-danger' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
                 </div>
                 </div>
             </ul>
