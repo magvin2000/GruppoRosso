@@ -26,12 +26,26 @@ include("config.php");
         $i=0;
         while($field = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            if($i==0)
+            if($i==2 )
             {
-                $id=$row[$field['Field']];
+                $campo=$row[$field['Field']];
+                echo "<td onclick='sorting($i);'>€" . $campo . "</td>";
             }
-            $campo=$row[$field['Field']];
+            else if($i==1 && $tabella=="carichi_rimini")
+            {
+                $campo=$row[$field['Field']];
+                echo "<td onclick='sorting($i);'>" . $campo . "</td>";
+            }
+            else if($i==3 && $tabella=="carichi_rimini")
+            {
+                $campo=$row[$field['Field']];
+                echo "<td onclick='sorting($i);'>" . substr($campo,6,2) . "/" . substr($campo,4,2) . "/" . substr($campo,0,4) . "</td>";
+            }
+            else {
+                              $campo=$row[$field['Field']];
             echo "<td onclick='sorting($i);'>" . $campo . "</td>";
+            }
+
             $i++;
         }
         echo "</tr>";

@@ -3,8 +3,8 @@ function sorting(value){
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById("id_table");
     switching = true;
-
-    while (switching) {
+    
+            while (switching) {
         switching = false;
         rows = table.getElementsByTagName("TR");
         for (i = 1; i < (rows.length - 1); i++) {
@@ -21,5 +21,9 @@ function sorting(value){
             switching = true;
         }
     }
+    
 }
 
+function sortingn(value){
+    
+}
