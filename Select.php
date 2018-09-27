@@ -36,19 +36,53 @@ include("config.php");
         }
         echo "</tr>";
     }
-
+    #1
     if($tabella == 'giacenze_milano')
     {
         if((isset($_GET['Ricerca'])) && ($_GET['Ricerca'] == 1 && isset($_GET['Valore']) && $_GET['Valore'] != ''))
         {
             $valore = $_GET['Valore'];
-            $sql = "SELECT * FROM giacenze_milano WHERE descrizione like '%$valore%' OR quantita like '%$valore%' OR prezzo like '%$valore%' ";
+            $sql = "SELECT * FROM giacenze_milano WHERE Descrizione like '%$valore%' OR Quantita like '%$valore%' OR Prezzo like '%$valore%' ";
             $stmt = $db->prepare($sql);  
             $stmt->execute();   
         }
         else
         {
             $sql = "SELECT * FROM giacenze_milano ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+    }
+    #2
+    if($tabella == 'carichi_rimini')
+    {
+        if((isset($_GET['Ricerca'])) && ($_GET['Ricerca'] == 1 && isset($_GET['Valore']) && $_GET['Valore'] != ''))
+        {
+            $valore = $_GET['Valore'];
+            $sql = "SELECT * FROM carichi_rimini WHERE Carico Scarico like '%$valore%' OR Descrizione like '%$valore%' OR Prezzo like '%$valore%' OR Datas like '%$valore%";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+        else
+        {
+            $sql = "SELECT * FROM carichi_rimini ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+    }
+    #3
+    if($tabella == 'maggior_costo')
+    {
+        if((isset($_GET['Ricerca'])) && ($_GET['Ricerca'] == 1 && isset($_GET['Valore']) && $_GET['Valore'] != ''))
+        {
+            $valore = $_GET['Valore'];
+            $sql = "SELECT * FROM maggior_costo WHERE Magazzino like '%$valore%' OR Descrizione  like '%$valore%' OR Prezzo like '%$valore%' OR Localita like '%$valore%' ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+        else
+        {
+            $sql = "SELECT * FROM maggior_costo ";
             $stmt = $db->prepare($sql);  
             $stmt->execute();   
         }
