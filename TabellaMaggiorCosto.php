@@ -51,7 +51,7 @@
                     <div class="search-control">
                     <input type="text" class="form-control" id="research"  onkeyup='Ricerca("Prodotti");' name="q" placeholder="Cerca...">
                     <button type='submit' style="margin: 5px" class='btn btn-primary' id="research"  onclick='RicercaFiltro("Prodotti");' ><span class='glyphicon glyphicon-search'></span></button>
-                    <button type='submit' style="margin: 5px"  class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
+                    <button type='submit' style="margin: 0px"  class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
                 </div>
                 </div>
             </ul>

@@ -37,10 +37,10 @@
                 <div class="form-group has-feedback">
             <div class="navbar-header">
                 <li class="dropdown navbar-brand">
-            <a class="dropdown-toggle" data-toggle="dropdown">Home > Giacenza Milano <b class="caret"></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown">Home > Giacenza Rimini <b class="caret"></b></a>
             <ol class="dropdown-menu">
               <!--<li><a href="TabellaMilano.php">Giacenza Milano</a></li>-->
-              <li><a href="TabellaMilano.php">Carichi Rimini</a></li>
+              <li><a href="TabellaMilano.php">Carichi Milano</a></li>
               <li><a href="TabellaMaggiorCosto.php">Maggior Costo</a></li>
             </ol>
           </li> 
@@ -51,7 +51,7 @@
                     <div class="search-control">
                     <input type="text" class="form-control" id="research"  onkeyup='Ricerca("Prodotti");' name="q" placeholder="Cerca...">
                     <button type='submit' style="margin: 5px" class='btn btn-primary' id="research"  onclick='RicercaFiltro("Prodotti");' ><span class='glyphicon glyphicon-search'></span></button>
-                    <button type='submit' style="margin: 5px"  class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
+                    <button type='submit' style="margin: 0px"  class='btn btn-primary' onclick='Redirect()'><span class='glyphicon glyphicon-arrow-left'></span></button> 
                 </div>
                 </div>
             </ul>
