@@ -10,7 +10,7 @@
     $stmt->execute();
     echo "<thead><tr>";
     $i=0;
-    $perpage = 10;
+    $perpage = 5;
     $page = 1;
 	if(isset($_GET['page'])){$page = filter_var($_GET['page'],FILTER_SANITIZE_NUMBER_INT);}
     $tot_pagine = ceil($tot_records/$perpage);
@@ -66,9 +66,23 @@
 
     /*$out.='<tr><td colspan="7"><nav><ul class="pagination">';
     for($i=1; $i<=$tot_pagine; $i++)
+    #1
+    if($tabella == 'giacenze_milano')
+    {
+        if((isset($_GET['Ricerca'])) && ($_GET['Ricerca'] == 1 && isset($_GET['Valore']) && $_GET['Valore'] != ''))
+        {
+            $valore = $_GET['Valore'];
+            $sql = "SELECT * FROM giacenze_milano WHERE Descrizione like '%$valore%' OR Quantita like '%$valore%' OR Prezzo like '%$valore%' ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+        else
         {
         $out .='<li><a href="?page='.$i.'">'.$i.'</a></li>';
         }
     $out .= "</ul></nav></td></tr>";
     $out.='</table>';
     return($out);*/
+    //}
+    #2
+?>
