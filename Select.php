@@ -36,3 +36,21 @@ include("config.php");
         }
         echo "</tr>";
     }
+
+    if($tabella == 'giacenze_milano')
+    {
+        if((isset($_GET['Ricerca'])) && ($_GET['Ricerca'] == 1 && isset($_GET['Valore']) && $_GET['Valore'] != ''))
+        {
+            $valore = $_GET['Valore'];
+            $sql = "SELECT * FROM giacenze_milano WHERE descrizione like '%$valore%' OR quantita like '%$valore%' OR prezzo like '%$valore%' ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+        else
+        {
+            $sql = "SELECT * FROM giacenze_milano ";
+            $stmt = $db->prepare($sql);  
+            $stmt->execute();   
+        }
+    }
+?>
