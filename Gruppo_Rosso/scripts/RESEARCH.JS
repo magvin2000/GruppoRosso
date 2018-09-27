@@ -30,10 +30,10 @@ function Reset() {
             celle[j].style.backgroundColor="white";
     }
 }
-
+/*
 function Filter(){
     var stringa = document.getElementById("research").value;
     if(stringa!="" && stringa!=".") {
         $("#id_table").load("Filter.php?stringa=" + stringa);
     }
-}
+}*/
