@@ -4,25 +4,22 @@
     // Per ulteriori informazioni, visitare: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "launch",
+<<<<<<< HEAD
+            "name": "Launch Chrome",
+=======
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080/GruppoRosso",
+>>>>>>> bf48da55f6f06802e9f4d1bf5f25f87506adde69
+            "url": "http://localhost:8080/CRUD-PHP-DATABASE-PRODOTTI",
             "webRoot": "${workspaceFolder}"
         },
         {
             "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
-            "port": 9000
-        },
-        {
-            "name": "Launch currently open script",
-            "type": "php",
-            "request": "launch",
-            "program": "${file}",
-            "cwd": "${fileDirname}",
             "port": 9000
         }
     ]
